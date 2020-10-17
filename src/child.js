@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { TransactionContext } from './transContext';
-
+import {initNotification} from './service/firebase-service';
 
 function Child() {
     let { transactions, addTransaction } = useContext(TransactionContext);
@@ -89,7 +89,8 @@ function Child() {
                         required />
                 </label>
                 <br />
-                <input className="btn" type="submit" value="Add Transaction" />
+                
+                <input onClick={initNotification} className="btn" type="submit" value="Add Transaction" />
             </form>
         </div>
     );
